@@ -1,0 +1,114 @@
+<!-- Step 1: Create the Layout. -->
+<!-- Step 2: Flag key sections with specific id names. These will be replaced by JavaScript -->
+<!-- Step 2: Link to JavaScript (at end of the file) -->
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Coding Bootcamp - Hangman</title>
+
+  <!-- Bootstrap is used to make game look nicer -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Our CSS style sheet -->
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- Bootstrap Container will hold everything -->
+  <div class="container">
+    <!-- Jumbotron holds the title section -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Crystal Collector!</h1>
+        <p>You will be given a random number at the start of the game.</p>
+        <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+        <p>You win the game by matching your total score to the random number. You lose the game if your total score goes above the random number.</p>
+        <p>The value of each crystal is hidden from you until you click on it.</p>
+        <p>Each time when the game starts, the game will change the values of each crystal.</p>
+      </div>
+    </div>
+
+      <!-- First Panel: Crystal Pics) -->
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Mystery Crystals</strong></h3>
+          </div>
+          <div id="crystal-pics" class="panel-body">
+            <!-- This us where I'll store the images of the crystals. I'll be referencing this in the JavaScript. -->
+            <button id="cry1"><img src="images/cry1.jpg"></button>
+            <button id="cry2"><img src="images/cry2.jpg"></button>
+            <button id="cry3"><img src="images/cry3.jpg"></button>
+            <button id="cry4"><img src="images/cry4.jpg"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second Panel: Random Number. -->
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Random Number</strong></h3>
+          </div>
+          <div id="random-number" class="panel-body">
+            <!-- This us where I'll store the random number. I'll be referencing this in the JavaScript. -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Third Panel: Total Score -->
+      <div class="col-lg-6">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Total Score</strong></h3>
+          </div>
+          <!-- This is where I will be displaying the total score. I'll be referencing this in the JavaScript. -->
+          <div id="score" class="panel-body">0</div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Fourth Panel: Wins. -->
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Wins</strong></h3>
+            </div>
+            <!-- This us where I'll store the number of wins. I'll be referencing this in the JavaScript. -->
+            <div id="wins" class="panel-body">0</div>
+          </div>
+        </div>
+
+        <!-- Fifth Panel: Lossess -->
+        <div class="col-lg-6">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Losses</strong></h3>
+            </div>
+            <!-- This is where I will be displaying the number of losses. I'll be referencing this in the JavaScript. -->
+            <div id="losses" class="panel-body">0</div>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- Adds a link to the javascript file. Loaded at the bottom so it waits for the HTML content to display first.
+	If you put this at the top it will crash, because the HTML IDs won't exist yet.-->
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.js"></script>
+
+  <!-- Script -->
+  <script type="text/javascript" src="crystalcollector.js"></script>
+
+</body>
+
+</html>
